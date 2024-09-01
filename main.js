@@ -1,31 +1,36 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const popup = document.getElementById('popup');
-    const closeBtn = document.getElementById('close-btn');
-    const video = document.getElementById('video');
+  const popup = document.getElementById('popup');
+  const closeBtn = document.getElementById('close-btn');
+  const video = document.getElementById('video');
 
-    function startCamera() {
+  function startCamera() {
       navigator.mediaDevices.getUserMedia({ video: true })
-        .then(function(stream) {
-          video.srcObject = stream;
-        })
-        .catch(function(error) {
-          console.error('Erro ao acessar a câmera:', error);
-        });
-    }
+          .then(function(stream) {
+              video.srcObject = stream;
+          })
+          .catch(function(error) {
+              console.error('Erro ao acessar a câmera:', error);
+          });
+  }
 
-    // Mostra o pop-up quando a página carregar
-    popup.style.display = 'flex';
-    startCamera();
+  // Mostra o pop-up quando a página carregar
+  popup.style.display = 'flex';
+  startCamera();
 
-    closeBtn.addEventListener('click', function() {
+  closeBtn.addEventListener('click', function() {
       popup.style.display = 'none';
       const stream = video.srcObject;
       if (stream) {
-        const tracks = stream.getTracks();
-        tracks.forEach(function(track) {
-          track.stop();
-        });
-        video.srcObject = null;
+          const tracks = stream.getTracks();
+          tracks.forEach(function(track) {
+              track.stop();
+          });
+          video.srcObject = null;
       }
-    });
   });
+
+  // Código JavaScript para abrir o pop-up
+  document.querySelector('.cta-button').addEventListener('click', function() {
+      popup.style.display = 'flex';
+  });
+});

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Landing Page com Pop-up de RA</title>  
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>   
+    <h1>Curso de Desenvolvimento Web para Iniciantes</h1>
+    <p>Front-end web development</p>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <div class="container">
+    <h2>Mude seu futuro</h2>
+    <p>Esse é a sua oportunidade para entrar no mercado de tecnologia. Entre em contato e saiba mais.</p>
+    <button class="cta-button">Saiba Mais</button>
+  </div>
+
+  <!-- Pop-up de Realidade Aumentada -->
+  <div id="popup" class="popup">
+    <video id="video" autoplay></video>
+    <div class="message">
+      <p>Você vai perder a chance de mudar seu futuro?</p>
+      <span>🤔</span>
+    </div>
+    <button id="close-btn">Fechar</button>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+</html>
